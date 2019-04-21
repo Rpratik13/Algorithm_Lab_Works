@@ -11,10 +11,10 @@ def linearSearch(array: list, target: int) -> int:
 def binarySearch(array: list, target: int) -> int:
 	left = 0
 	right = len(array)
+	mid = (left + right) // 2
 
 
-	while (left < right):
-		mid = (left + right) // 2
+	while (left <= right) and (mid in range(len(array))):
 
 		if array[mid] == target:
 			return mid
@@ -22,12 +22,14 @@ def binarySearch(array: list, target: int) -> int:
 			right = mid - 1
 		else:
 			left = mid + 1
+		mid = (left + right) // 2
 	return -1
 
 
 def recursiveBinarySearch(array: list, target: int, left: int, right: int) -> int:
-	if (left < right):
-		mid = (left + right) // 2
+	mid = (left + right) // 2
+	if (left <= right) and (mid in range(len(array))):
+		
 
 		if array[mid] == target:
 			return mid
@@ -168,5 +170,5 @@ def plotRecursiveBinarySearch() -> None:
 
 
 if __name__ == '__main__':
-	print(recursiveBinarySearch([1], 2, 0, 1))
+	print(recursiveBinarySearch([], 1, 0, 0))
 
