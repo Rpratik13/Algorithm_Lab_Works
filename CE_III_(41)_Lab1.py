@@ -12,7 +12,8 @@ def binarySearch(array: list, target: int) -> int:
 	left = 0
 	right = len(array)
 
-	while (left <= right):
+
+	while (left < right):
 		mid = (left + right) // 2
 
 		if array[mid] == target:
@@ -25,7 +26,7 @@ def binarySearch(array: list, target: int) -> int:
 
 
 def recursiveBinarySearch(array: list, target: int, left: int, right: int) -> int:
-	if (left <= right):
+	if (left < right):
 		mid = (left + right) // 2
 
 		if array[mid] == target:
@@ -167,5 +168,5 @@ def plotRecursiveBinarySearch() -> None:
 
 
 if __name__ == '__main__':
-	testRecursiveBinarySearch()
+	print(recursiveBinarySearch([1], 2, 0, 1))
 
